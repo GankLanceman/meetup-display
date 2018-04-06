@@ -1,0 +1,51 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-header {
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+  text-align: center;
+  color: Black;
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.34);
+}
+
+.app-title {
+  font-size: 1.5em;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.standard-margins {
+  margin: 6px;
+}
+
+/* Layout Styles */
+.flex {
+  display: flex;
+  min-height: 0;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.fill-container {
+  height: 100%;
+  width: 100%;
+}
+
+.grow {
+  flex-grow: 1;
+}

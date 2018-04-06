@@ -1,0 +1,25 @@
+.list-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 300px;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+.list {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list-item {
+  height: 50px;
+  margin: 1px 0;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.list-item:hover {
+  background-color: #e2e2e2 ;
+  border-radius: 2px;
+}
