@@ -38,7 +38,7 @@ class List extends Component {
         return(
           <ListItem 
             key={listItem.id} 
-            id={listItem.id} 
+            itemDetails={listItem} 
             title={listItem.name} 
             selected={selectedID === listItem.id}
             date={new Date(listItem.time)} 
@@ -54,8 +54,15 @@ class List extends Component {
           Meetups
         </div>
         <hr style={{ width: "100%" }} />
-        <div className="list grow">
-          {renderListItems}
+        <div>
+          {
+            renderListItems ?
+            renderListItems
+            :
+            <div>
+              Loading, please wait...
+            </div>
+          }
         </div>
       </div>
     )

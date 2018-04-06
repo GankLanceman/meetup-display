@@ -12,35 +12,35 @@ class App extends Component {
 
     this.state = {
       eventID: null,
-      eventTitle: "Loading please wait"
+      eventDetails: null
     }
 
     this.updateEventID = this.updateEventID.bind(this);
   }
 
-  updateEventID(id, eventTitle) {
+  updateEventID(eventDetails) {
     this.setState({
-      eventID: id,
-      eventTitle
+      eventID: eventDetails.id,
+      eventDetails
     })
   }
 
   render() {
-    const { eventID, eventTitle } = this.state;
+    const { eventID, eventDetails } = this.state;
     
     return (
       <div className="app">
         <header className="app-header">
           <h1 className="app-title">Reactjs Dallas Meetups</h1>
         </header>
-        <div className="flex fill-container">
+        <div className="flex">
           <List itemClick={this.updateEventID} selectedID={eventID}/>
           {
             eventID ?
-            <div className="flex-column grow">  
-              <EventDetails title={eventTitle} />
-              <hr style={{ width: "100%" }} />
-              <AttendanceDetails />
+            <div className="flex-column">  
+              <EventDetails event={eventDetails} />
+              <hr style={{ width: "100%"}} />
+              <AttendanceDetails eventID={eventID} />
             </div>
             :
             <div className="standard-margins sub-title">

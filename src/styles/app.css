@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
-  height: 95%;
+  min-width: 1000px;
 }
 
 .app-header {
@@ -24,6 +24,12 @@
   font-weight: bold;
 }
 
+.sub-heading {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 .standard-margins {
   margin: 6px;
 }
@@ -38,13 +44,4 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
-}
-
-.fill-container {
-  height: 100%;
-  width: 100%;
-}
-
-.grow {
-  flex-grow: 1;
 }

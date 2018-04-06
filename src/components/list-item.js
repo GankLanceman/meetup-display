@@ -1,13 +1,17 @@
 import React from "react";
 
+import { formatDate } from "../utilities"
+
 import "../styles/list.css"
 
-const ListItem = ({ id, title, date, selected, action }) => {
+const ListItem = ({ itemDetails, title, date, selected, action }) => {
   return (
-    <div className={`list-item ${selected ? "selected-item" : ""}`} onClick={() => action(id, title)}>
+    <div className={`list-item ${selected ? "selected-item" : ""}`} onClick={() => action(itemDetails)}>
       {title}
       <br />
-      {date.toLocaleDateString()} {date.toLocaleTimeString()}
+      <div style={{fontSize: ".8em"}}>
+        {formatDate(date)}
+      </div>
     </div>
   )
 }

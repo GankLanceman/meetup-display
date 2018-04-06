@@ -1,11 +1,6 @@
 body {
-  height: 100vh;
   margin: 0;
   padding: 0;
   background-color: #ffffff;
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-}
-
-#root {
-  height: 100%;
 }
