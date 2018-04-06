@@ -1,8 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import App from './app';
+import App from "./app";
+import { fetchToken } from "./api";
 
-import './styles/index.css';
+import "./styles/index.css";
+
+fetchToken();
 
 ReactDOM.render(<App />, document.getElementById('root'));
