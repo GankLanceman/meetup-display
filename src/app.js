@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 import List from "./containers/list"
-import EventDetails from "./containers/event-details"
 import AttendanceDetails from "./containers/attendance-details"
+import EventDetails from "./components/event-details"
 
 import "./styles/app.css";
 

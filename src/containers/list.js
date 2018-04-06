@@ -22,7 +22,6 @@ class List extends Component {
   }
 
   receiveList(list) {
-    console.log(list)
     this.setState({
       listItems: list
     })

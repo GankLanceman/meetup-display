@@ -91,7 +91,6 @@ const filterListByType = (attendeeList, attendanceType) => {
   return attendeeList
   .filter(attendant => attendant.response === attendanceType)
   .map(attendant => {
-    console.log(attendant)
     return {
       name: attendant.member.name,
       id: attendant.member.id,
