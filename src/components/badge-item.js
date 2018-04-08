@@ -4,7 +4,7 @@ const BadgeItem = ({ name, imageUrl }) => {
   return (
     <div className="badge">
       <img src={imageUrl} alt={name} className="badge-image" />
-      <div title={name}>
+      <div title={name} className="badge-text">
         {name}
       </div>
     </div>

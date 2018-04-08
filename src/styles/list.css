@@ -48,3 +48,8 @@
   padding: 3px;
   border-radius: 25px;
 }
+
+.badge-text {
+  display: flex;
+  align-items: center;
+}
