@@ -50,6 +50,7 @@
 }
 
 .badge-text {
+  width: 125px;
   display: flex;
   align-items: center;
 }
