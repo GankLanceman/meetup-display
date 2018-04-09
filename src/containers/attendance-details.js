@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { fetchAttendees } from "../api";
 import BadgeList from "../components/badge-list";
 
+import "../styles/app.css"
+
 const ATTENDANCE_TYPE = {
   GOING: "yes",
   NOT_GOING: "no",
@@ -14,7 +16,7 @@ class AttendanceDetails extends Component {
     super(props);
 
     this.state = {
-      attendees: [],
+      attendanceList: [],
       fetching: false
     }
 
@@ -37,30 +39,30 @@ class AttendanceDetails extends Component {
       fetchAttendees(this.receiveAttendees, this.props.eventID)
 
       this.setState({
-        attendees: [],
+        attendanceList: [],
         fetching: true
       })
     }
   }
 
-  receiveAttendees(attendeesList) {
+  receiveAttendees(attendanceList) {
     this.setState({
-      attendees: attendeesList,
+      attendanceList,
       fetching: false
     })
   }
 
   render() {
-    const { attendees, fetching } = this.state;
+    const { attendanceList, fetching } = this.state;
 
     let renderGoingAttendees = null;
     let renderWaitlistAttendees = null;
     let renderNotGoingAttendees = null;
 
-    if (attendees.length !== 0) {
-      renderGoingAttendees = <BadgeList heading="Going" badgeData={filterListByType(attendees, ATTENDANCE_TYPE.GOING)} />;
-      renderWaitlistAttendees = <BadgeList heading="Waitlist" badgeData={filterListByType(attendees, ATTENDANCE_TYPE.WAITLIST)} />;
-      renderNotGoingAttendees = <BadgeList heading="Not Going" badgeData={filterListByType(attendees, ATTENDANCE_TYPE.NOT_GOING)} />;
+    if (attendanceList.length !== 0) {
+      renderGoingAttendees = <BadgeList heading="Going" badgeData={filterListByType(attendanceList, ATTENDANCE_TYPE.GOING)} />;
+      renderWaitlistAttendees = <BadgeList heading="Waitlist" badgeData={filterListByType(attendanceList, ATTENDANCE_TYPE.WAITLIST)} />;
+      renderNotGoingAttendees = <BadgeList heading="Not Going" badgeData={filterListByType(attendanceList, ATTENDANCE_TYPE.NOT_GOING)} />;
     }
 
     return (
@@ -87,14 +89,15 @@ class AttendanceDetails extends Component {
 
 export default AttendanceDetails;
 
-const filterListByType = (attendeeList, attendanceType) => {
-  return attendeeList
-  .filter(attendant => attendant.response === attendanceType)
-  .map(attendant => {
-    return {
-      name: attendant.member.name,
-      id: attendant.member.id,
-      imageUrl: attendant.member.photo.thumb_link
-    }
-  })
+const filterListByType = (attendanceList, attendanceType) => {
+    return attendanceList.filter(attendant => 
+      attendant.response === attendanceType
+    )
+    .map(attendant => {
+      return {
+        name: attendant.member.name,
+        id: attendant.member.id,
+        imageUrl: attendant.member.photo.thumb_link
+      }
+    })
 }

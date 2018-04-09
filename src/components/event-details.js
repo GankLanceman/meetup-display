@@ -2,6 +2,8 @@ import React from "react";
 
 import { formatDate } from "../utilities";
 
+import "../styles/app.css"
+
 const EventDetails = ({ event }) => {
   const eventDate = new Date(event.time)
 

@@ -2,6 +2,9 @@ import React from "react";
 
 import BadgeItem from "./badge-item";
 
+import "../styles/list.css";
+import "../styles/app.css";
+
 const BadgeList = ({ heading, badgeData }) => {
   const renderBadgeItems = badgeData.map(badge => {
     return (

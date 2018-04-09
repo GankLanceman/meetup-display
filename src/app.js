@@ -15,10 +15,10 @@ class App extends Component {
       eventDetails: null
     }
 
-    this.updateEventID = this.updateEventID.bind(this);
+    this.updateEvent = this.updateEvent.bind(this);
   }
 
-  updateEventID(eventDetails) {
+  updateEvent(eventDetails) {
     this.setState({
       eventID: eventDetails.id,
       eventDetails
@@ -34,7 +34,7 @@ class App extends Component {
           <h1 className="app-title">Reactjs Dallas Meetups</h1>
         </header>
         <div className="flex">
-          <List itemClick={this.updateEventID} selectedID={eventID}/>
+          <List itemClick={this.updateEvent} selectedID={eventID}/>
           {
             eventID ?
             <div className="flex-column">  

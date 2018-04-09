@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../styles/list.css";
+
 const BadgeItem = ({ name, imageUrl }) => {
   return (
     <div className="badge">
